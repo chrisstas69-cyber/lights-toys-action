@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp & Kyte Daily Toy Uploader (with Chinese-to-English Auto-Translator) | Lights Toys Action</title>
+  <meta name="description" content="Turn daily Happy Toys WhatsApp messages & Chinese factory photos into clean English website products, Shopify CSV rows, and 20-second TikTok scripts." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-950 text-white">
+
+  <!-- HEADER -->
+  <header class="bg-slate-950/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/brand/logo.png" alt="Lights Toys Action Logo" class="h-12 md:h-14 w-auto object-contain" />
+        <div>
+          <span class="font-display text-lg md:text-xl font-extrabold text-white block leading-none">
+            LIGHTS <span class="text-cyan-400">TOYS!</span> <span class="text-pink-500">ACTION</span>
+          </span>
+          <span class="text-[11px] text-emerald-400 font-bold uppercase"><i class="fab fa-whatsapp mr-1"></i>WhatsApp Uploader + Chinese-to-English Cleaner</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-bold text-slate-200">
+        <a href="index.html" class="hover:text-cyan-400 transition">Storefront Home</a>
+        <a href="shop.html" class="hover:text-cyan-400 transition">Full Catalog (121+)</a>
+        <a href="playbook.html" class="hover:text-yellow-400 transition"><i class="fas fa-rocket text-yellow-400 mr-1"></i>TikTok Playbook</a>
+        <a href="uploader.html" class="text-emerald-400 flex items-center gap-1.5"><i class="fab fa-whatsapp text-lg"></i> WhatsApp Uploader</a>
+      </nav>
+      <a href="shop.html" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-full border border-slate-700">
+        <i class="fas fa-store text-cyan-400 mr-1"></i> View Live Store
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-10 bg-lta-dark-gradient border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-extrabold px-3.5 py-1 rounded-full mb-3">
+        <i class="fas fa-language text-base"></i> BUILT-IN CHINESE-TO-ENGLISH TRANSLATOR &amp; FACTORY PHOTO CLEANER
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-2">
+        Turn Happy Toys <span class="text-emerald-400">WhatsApp Drops &amp; Chinese Factory Photos</span> Into Clean English Listings
+      </h1>
+      <p class="text-slate-300 max-w-3xl text-sm leading-relaxed">
+        Distributor photos and WhatsApp messages often come straight from the factory with Chinese text (`毛绒公仔`, `发光`, `货号`, `箱规`) or Chinese stamps around the edges of the image. Drop them below to **auto-translate Chinese toy terms to English**, **mask out Chinese factory border stamps** onto a clean white studio background, calculate your retail price, and publish to your store!
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN UPLOADER WORKSPACE -->
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+      <!-- Left: Input Form (Drop WhatsApp Photos + Paste Chinese/English WhatsApp Text) -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2 class="text-xl font-extrabold flex items-center gap-2">
+              <i class="fab fa-whatsapp text-emerald-400 text-2xl"></i> 1. Drop WhatsApp Photo &amp; Text
+            </h2>
+            <div class="flex gap-2">
+              <button onclick="fillSampleChineseWhatsApp()" class="text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full hover:bg-amber-500 hover:text-slate-950 transition">
+                <i class="fas fa-language mr-1"></i> Test Chinese WhatsApp Drop
+              </button>
+              <button onclick="fillSampleWhatsApp()" class="text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-3 py-1 rounded-full hover:bg-cyan-500 hover:text-slate-950 transition">
+                Test English Drop
+              </button>
+            </div>
+          </div>
+
+          <!-- Drag & Drop Image Zone + Factory Border Cleaner Tools -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-bold uppercase text-slate-400">Drop WhatsApp Photo Here</label>
+              <div class="flex flex-wrap gap-1.5">
+                <button type="button" onclick="eraseMiddleWholesaleStamps()" class="text-[11px] font-bold bg-pink-500/20 hover:bg-pink-500 hover:text-white text-pink-300 px-2.5 py-1 rounded-lg border border-pink-500/40 transition" title="Automatically erases middle SKU/Box/Price stamps like DDL101-1 / 60 BOX / TPR">
+                  <i class="fas fa-eraser mr-1"></i> Auto-Erase SKU / 60 BOX / Price Stamps
+                </button>
+                <button type="button" onclick="cleanChineseFactoryBorders(0.14)" class="text-[11px] font-bold bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-300 px-2.5 py-1 rounded-lg border border-slate-700 transition" title="Masks out top/bottom/corner Chinese factory stamps onto a clean white studio background">
+                  <i class="fas fa-crop-simple mr-1"></i> Clean Corner Text
+                </button>
+                <button type="button" onclick="resetOriginalPhoto()" class="text-[11px] font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700 transition">
+                  Reset
+                </button>
+              </div>
+            </div>
+            <label id="drop-zone" class="border-2 border-dashed border-slate-700 hover:border-emerald-400 rounded-2xl p-5 flex flex-col items-center justify-center text-center cursor-pointer bg-slate-950/70 transition">
+              <input id="wa-photo-input" type="file" accept="image/*" multiple class="hidden" />
+              <div id="photo-preview-wrap" class="flex flex-wrap justify-center gap-3 mb-2">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+                  <i class="fas fa-cloud-arrow-up"></i>
+                </div>
+              </div>
+              <p id="drop-zone-text" class="text-sm font-bold text-white">Click or drag WhatsApp toy photo here</p>
+              <p class="text-xs text-slate-400 mt-1">Have Chinese text stamped in the top/bottom corners of the image? Click <strong>"Clean Corner/Border Chinese Text"</strong> above!</p>
+            </label>
+          </div>
+
+          <!-- Paste Raw WhatsApp Message Text (Supports Chinese or English) -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">
+              Paste WhatsApp Message (Chinese or English — Auto-Translates to English!)
+            </label>
+            <textarea id="wa-raw-text" rows="2" placeholder="Paste Chinese or English message, e.g.: 新品! 货号: LB-12 拉布布发光毛绒双肩背包 尺寸:30cm $4.80/个" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-400" oninput="parseWhatsAppText(this.value)"></textarea>
+            <p id="translation-notice" class="hidden text-xs text-amber-300 mt-1.5 font-semibold">
+              <i class="fas fa-check-circle text-emerald-400 mr-1"></i> Detected Chinese factory terms — automatically translated to clean English below!
+            </p>
+          </div>
+
+          <!-- Parsed English Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-800">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Clean English Toy Title (Customer-Facing)</label>
+              <input id="toy-name" type="text" placeholder="e.g. Labubu LED Light-Up Plush Backpack (30cm)" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white font-semibold" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Happy Toys SKU Code</label>
+              <input id="toy-sku" type="text" placeholder="e.g. LB-12 or MO-099" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white uppercase" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Category</label>
+              <select id="toy-category" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                <option value="light-up">Light-Up &amp; Interactive</option>
+                <option value="pokemon">Pokémon Plush</option>
+                <option value="backpacks">Plush Backpacks &amp; Sanrio</option>
+                <option value="gaming-plush">Viral Gaming Plush</option>
+                <option value="puppets">Hand Puppets</option>
+                <option value="stem-games">Playsets &amp; STEM</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-emerald-400 mb-1">Your Wholesale Cost ($)</label>
+              <input id="toy-cost" type="number" step="0.01" placeholder="e.g. 4.80" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-emerald-500/50 text-sm text-white" oninput="autoCalcMarkup()" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-cyan-400 mb-1">Website &amp; TikTok Retail Price ($)</label>
+              <input id="toy-price" type="number" step="0.01" placeholder="e.g. 18.99" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-cyan-500/50 text-sm text-white font-bold" />
+            </div>
+          </div>
+
+          <div id="profit-badge" class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3 text-xs text-emerald-300 flex items-center justify-between">
+            <span><i class="fas fa-chart-line mr-1.5"></i>Estimated Profit Per Unit:</span>
+            <strong id="profit-amount" class="text-sm">$12.79 (75% Margin)</strong>
+          </div>
+
+          <button onclick="addWhatsAppToyToStore()" class="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-95 text-slate-950 font-extrabold py-4 rounded-2xl shadow-xl transition text-base flex items-center justify-center gap-2">
+            <i class="fas fa-bolt"></i> Add English Listing to Website + Generate TikTok Script
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: How We Handle Chinese Images + Instant TikTok Script + Export -->
+      <div class="lg:col-span-6 space-y-6">
+
+        <!-- 3 Ways We Convert Chinese Factory Photos to English -->
+        <div class="bg-slate-900 border border-amber-500/40 rounded-3xl p-6">
+          <span class="bg-amber-500/20 text-amber-300 text-xs font-extrabold px-3 py-1 rounded-full">HOW WE HANDLE CHINESE FACTORY PHOTOS</span>
+          <h3 class="text-lg font-extrabold mt-2 mb-3">3 Levels of Chinese-to-English Cleanup</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+              <div class="font-bold text-emerald-400 mb-1"><i class="fas fa-language mr-1"></i>1. Text &amp; Specs</div>
+              <p class="text-slate-400">Paste any Chinese WhatsApp text (`毛绒`, `发光`, `双肩包`, `尺寸`) on the left and it translates to clean English automatically.</p>
+            </div>
+            <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+              <div class="font-bold text-cyan-400 mb-1"><i class="fas fa-crop-simple mr-1"></i>2. Corner Stamps</div>
+              <p class="text-slate-400">Click <strong>"Clean Corner/Border Chinese Text"</strong> on the left to mask out factory Chinese headers/footers onto a white studio frame.</p>
+            </div>
+            <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+              <div class="font-bold text-pink-400 mb-1"><i class="fas fa-wand-magic-sparkles mr-1"></i>3. AI Studio Retouch</div>
+              <p class="text-slate-400">If Chinese text is stamped right across the toy, drop the image in our AI chat and say <em>"Clean the Chinese text off this photo"</em>!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generated TikTok Script Box -->
+        <div class="bg-slate-900 border border-pink-500/40 rounded-3xl p-6">
+          <span class="bg-pink-500/20 text-pink-300 text-xs font-extrabold px-3 py-1 rounded-full">AUTO-GENERATED 20-SECOND TIKTOK SCRIPT</span>
+          <h3 class="text-xl font-extrabold mt-2 mb-3">Film This Today When the Box Arrives</h3>
+          <div id="generated-script-box" class="bg-slate-950 border border-slate-800 rounded-2xl p-4 text-sm text-slate-200 leading-relaxed space-y-2">
+            <p class="text-xs text-cyan-400 font-bold uppercase">Camera: 4K 30fps • Exposure: -0.5 • Length: 18 Seconds</p>
+            <p id="script-hook-text" class="italic">"This just landed in our New York warehouse from Happy Toys this morning—and watch why every kid at our Long Island booth is already asking for it..."</p>
+          </div>
+        </div>
+
+        <!-- Added Custom Items List & Export -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-extrabold">Newly Added WhatsApp Drops</h3>
+              <p class="text-xs text-slate-400">Items added here appear immediately on your local store &amp; can be exported to Shopify CSV.</p>
+            </div>
+            <button onclick="downloadUpdatedShopifyCSV()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-extrabold px-4 py-2.5 rounded-xl transition flex items-center gap-1.5">
+              <i class="fas fa-download"></i> Export Full CSV (121+ Items)
+            </button>
+          </div>
+
+          <div id="custom-drops-list" class="space-y-3 max-h-80 overflow-y-auto"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/products.js"></script>
+  <script>
+    const CUSTOM_PRODUCTS_KEY = "lta_whatsapp_drops_v1";
+    let currentImageDataUrl = "assets/products/BA-118 PLUSH $4.20.png";
+    let originalImageDataUrl = "assets/products/BA-118 PLUSH $4.20.png";
+
+    // Chinese Wholesale Toy Dictionary -> Clean American English
+    const CN_TO_EN_MAP = [
+      [/拉布布/g, "Labubu "],
+      [/宝可梦|口袋妖怪|宠物小精灵|精灵宝可梦/g, "Pokémon "],
+      [/皮卡丘/g, "Pikachu "],
+      [/伊布/g, "Eevee "],
+      [/耿鬼/g, "Gengar "],
+      [/卡比兽/g, "Snorlax "],
+      [/喷火龙/g, "Charizard "],
+      [/杰尼龟/g, "Squirtle "],
+      [/小火龙/g, "Charmander "],
+      [/妙蛙种子/g, "Bulbasaur "],
+      [/可达鸭/g, "Psyduck "],
+      [/三丽鸥/g, "Sanrio "],
+      [/凯蒂猫|ハローキティ/g, "Hello Kitty "],
+      [/库洛米|酷洛米/g, "Kuromi "],
+      [/美乐蒂/g, "My Melody "],
+      [/玉桂狗|大耳狗/g, "Cinnamoroll "],
+      [/布丁狗/g, "Pompompurin "],
+      [/史迪奇|史迪仔/g, "Stitch "],
+      [/彩虹朋友/g, "Rainbow Friends "],
+      [/波比|大嘴怪/g, "Monster "],
+      [/奶茶杯|珍珠奶茶/g, "Boba Bubble Tea "],
+      [/毛绒双肩包|双肩背包|毛绒背包|双肩包|背包|书包/g, "Plush Backpack "],
+      [/斜挎包|单肩包/g, "Crossbody Plush Bag "],
+      [/零钱包|收纳包|笔袋/g, "Plush Zip Pouch "],
+      [/手偶|腹语玩偶/g, "Comedy Hand Puppet "],
+      [/发光|闪光|七彩灯|带灯|LED灯|夜市发光/g, "LED Light-Up "],
+      [/花环|头箍|发箍/g, "Flower Crown Headband "],
+      [/面具/g, "Neon Glow Mask "],
+      [/光剑|像素剑/g, "LED Pixel Sword "],
+      [/泡泡枪|泡泡机|全自动泡泡/g, "Automatic Bubble Blaster "],
+      [/机器人|电动|智能|语音/g, "Interactive Smart Robot "],
+      [/钥匙扣|挂件|挂饰|包挂/g, "Keychain & Bag Charm "],
+      [/盲盒|惊喜盒/g, "Surprise Blind Box "],
+      [/抱枕|靠垫/g, "Cuddle Pillow "],
+      [/毛绒玩具|毛绒公仔|毛绒玩偶|公仔|玩偶|毛绒/g, "Plush Toy "],
+      [/厘米|公分/g, "cm "],
+      [/克/g, "g "],
+      [/新品到货|新款到货|新品|新款|爆款|热销|现货/g, ""],
+      [/货号|编号|款号/g, "SKU "],
+      [/尺寸|大小|高度|规格/g, "Size "],
+      [/重量|克重/g, "Weight "],
+      [/装箱数|箱规|每箱|件\/箱|个\/箱/g, ""]
+    ];
+
+    function translateChineseToyText(input) {
+      let text = input || "";
+      const hadChinese = /[\u4e00-\u9fff]/.test(text);
+      for (const [regex, replacement] of CN_TO_EN_MAP) {
+        text = text.replace(regex, replacement);
+      }
+      // Remove any leftover Chinese characters/punctuation cleanly
+      text = text.replace(/[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]+/g, " ");
+      text = text.replace(/\s+/g, " ").trim();
+      return { translated: text, hadChinese };
+    }
+
+    function loadCustomDrops() {
+      try {
+        return JSON.parse(localStorage.getItem(CUSTOM_PRODUCTS_KEY) || "[]");
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveCustomDrops(list) {
+      localStorage.setItem(CUSTOM_PRODUCTS_KEY, JSON.stringify(list));
+      renderCustomDrops();
+    }
+
+    // Handle photo upload
+    const fileInput = document.getElementById("wa-photo-input");
+    if (fileInput) {
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        parseWhatsAppText(file.name.replace(/\.(png|jpg|jpeg|webp)$/i, ""));
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          originalImageDataUrl = ev.target.result;
+          currentImageDataUrl = ev.target.result;
+          updatePhotoPreview("Loaded: " + file.name);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function updatePhotoPreview(label) {
+      document.getElementById("photo-preview-wrap").innerHTML =
+        `<img src="${currentImageDataUrl}" class="h-28 w-28 object-contain bg-white rounded-xl p-1 border-2 border-emerald-400 shadow-lg" />`;
+      if (label) document.getElementById("drop-zone-text").textContent = label;
+    }
+
+    // Mask out top/bottom/corner Chinese factory text stamps onto a clean white studio canvas
+    function cleanChineseFactoryBorders(cropRatio = 0.14) {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const size = 800;
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext("2d");
+
+        // Pure studio white background
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, size, size);
+
+        // Crop outer factory margins (where Chinese weight/size/background banners live)
+        const sx = img.width * cropRatio;
+        const sy = img.height * cropRatio;
+        const sw = img.width * (1 - cropRatio * 2);
+        const sh = img.height * (1 - cropRatio * 2);
+
+        const pad = 60;
+        ctx.drawImage(img, sx, sy, sw, sh, pad, pad, size - pad * 2, size - pad * 2);
+
+        // Add subtle English "NY Verified • Lights Toys Action" badge in bottom right
+        ctx.fillStyle = "#0f172a";
+        ctx.beginPath();
+        ctx.roundRect(size - 235, size - 44, 220, 30, 15);
+        ctx.fill();
+        ctx.fillStyle = "#00d4ff";
+        ctx.font = "bold 13px sans-serif";
+        ctx.fillText("⚡ LIGHTS TOYS ACTION • NY", size - 220, size - 24);
+
+        currentImageDataUrl = canvas.toDataURL("image/png");
+        updatePhotoPreview("Cleaned Factory Borders & Added English Studio Frame!");
+      };
+      img.src = originalImageDataUrl;
+    }
+
+    function resetOriginalPhoto() {
+      currentImageDataUrl = originalImageDataUrl;
+      updatePhotoPreview("Restored Original Photo");
+    }
+
+    // Automatically erases Happy Toys middle wholesale text stamps (DDL101-1, 60 BOX, TPR, $Price, dimensions)
+    function eraseMiddleWholesaleStamps() {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const w = img.width;
+        const h = img.height;
+        const topTrim = Math.round(h * 0.027);
+        const botTrim = Math.round(h * 0.027);
+        canvas.width = w;
+        canvas.height = h - topTrim - botTrim;
+        const ctx = canvas.getContext("2d");
+
+        ctx.drawImage(img, 0, topTrim, w, h - topTrim - botTrim, 0, 0, w, canvas.height);
+
+        const ch = canvas.height;
+        ctx.fillStyle = "#ffffff";
+        // Top dimension text zone
+        ctx.fillRect(w * 0.35, 0, w * 0.40, ch * 0.035);
+        // Middle right SKU & "60 BOX" / "$Price" stamp zone
+        ctx.fillRect(w * 0.48, ch * 0.275, w * 0.45, ch * 0.155);
+        // Middle left "TPR" stamp zone
+        ctx.fillRect(w * 0.20, ch * 0.355, w * 0.22, ch * 0.075);
+        // Bottom "3.5CM" stamp zone
+        ctx.fillRect(w * 0.18, ch * 0.91, w * 0.25, ch * 0.09);
+
+        currentImageDataUrl = canvas.toDataURL("image/jpeg", 0.95);
+        updatePhotoPreview("Auto-Erased SKU, 60 BOX, Price & Dimension Stamps!");
+      };
+      img.src = originalImageDataUrl;
+    }
+
+    function parseWhatsAppText(rawInput) {
+      if (!rawInput) return;
+      const { translated, hadChinese } = translateChineseToyText(rawInput);
+      const notice = document.getElementById("translation-notice");
+      if (notice) {
+        if (hadChinese) notice.classList.remove("hidden");
+        else notice.classList.add("hidden");
+      }
+
+      const skuMatch = translated.match(/\b([A-Z]{1,3}-\d+[A-Z]?)\b/i);
+      if (skuMatch) document.getElementById("toy-sku").value = skuMatch[1].toUpperCase();
+
+      const priceMatch = translated.match(/\$(\d+(?:\.\d+)?)/);
+      if (priceMatch) {
+        document.getElementById("toy-cost").value = parseFloat(priceMatch[1]).toFixed(2);
+        autoCalcMarkup();
+      }
+
+      const cleanedTitle = translated
+        .replace(/new arrival!?/gi, "")
+        .replace(/sku:?\s*[A-Z]{1,3}-\d+[A-Z]?/gi, "")
+        .replace(/\b[A-Z]{1,3}-\d+[A-Z]?\b/gi, "")
+        .replace(/\$\d+(?:\.\d+)?(\s*each|\/pc|\/ea)?/gi, "")
+        .replace(/\b\d+\s*(pcs|ctn)\b/gi, "")
+        .replace(/[:\/]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (cleanedTitle.length > 2) {
+        document.getElementById("toy-name").value = cleanedTitle;
+      }
+
+      if (/backpack|bag|sanrio|kitty|kuromi|cinnamoroll|pouch|boba/i.test(translated)) {
+        document.getElementById("toy-category").value = "backpacks";
+      } else if (/pokemon|pikachu|eevee|snorlax|charizard|gengar|squirtle/i.test(translated)) {
+        document.getElementById("toy-category").value = "pokemon";
+      } else if (/puppet|jeffy/i.test(translated)) {
+        document.getElementById("toy-category").value = "puppets";
+      } else if (/led|light|glow|robot|sword|mask|bubble|crown/i.test(translated)) {
+        document.getElementById("toy-category").value = "light-up";
+      } else {
+        document.getElementById("toy-category").value = "gaming-plush";
+      }
+    }
+
+    function autoCalcMarkup() {
+      const cost = parseFloat(document.getElementById("toy-cost").value);
+      if (isNaN(cost) || cost <= 0) return;
+      const retail = Math.max(12, Math.round(cost * 3.8)) + 0.99;
+      document.getElementById("toy-price").value = retail.toFixed(2);
+      const profit = (retail - cost).toFixed(2);
+      const margin = Math.round(((retail - cost) / retail) * 100);
+      document.getElementById("profit-amount").textContent = `$${profit} profit (${margin}% Gross Margin)`;
+    }
+
+    function fillSampleChineseWhatsApp() {
+      const sampleCN = "新品到货! 货号: LB-12 拉布布发光毛绒双肩背包 尺寸:30cm $4.80/个 120个/箱";
+      document.getElementById("wa-raw-text").value = sampleCN;
+      originalImageDataUrl = "assets/products/BA-118 PLUSH $4.20.png";
+      currentImageDataUrl = originalImageDataUrl;
+      updatePhotoPreview("Loaded Factory Photo (With Chinese Background Sign)");
+      parseWhatsAppText(sampleCN);
+    }
+
+    function fillSampleWhatsApp() {
+      const sample = "New Arrival! SKU: LB-09 Labubu Macaron Vinyl Face Plush Keychain & Bag Charm $4.50 each";
+      document.getElementById("wa-raw-text").value = sample;
+      parseWhatsAppText(sample);
+    }
+
+    function addWhatsAppToyToStore() {
+      const name = document.getElementById("toy-name").value.trim() || "New Happy Toys NY Arrival";
+      const sku = (document.getElementById("toy-sku").value.trim() || "LTA-WA-" + Math.floor(100 + Math.random() * 900)).toUpperCase();
+      const cat = document.getElementById("toy-category").value;
+      const price = parseFloat(document.getElementById("toy-price").value) || 19.99;
+      const compareAt = Math.round(price * 1.35) + 0.99;
+
+      const catLabels = {
+        "light-up": "Light-Up & Interactive",
+        "pokemon": "Pokémon Plush",
+        "backpacks": "Plush Backpacks & Sanrio",
+        "gaming-plush": "Viral Gaming Plush",
+        "puppets": "Hand Puppets",
+        "stem-games": "Playsets & STEM"
+      };
+
+      const newProduct = {
+        id: "lta-wa-" + Date.now(),
+        sku: sku,
+        name: name,
+        category: cat,
+        categoryLabel: catLabels[cat] || "Trending Toys",
+        ageGroup: "6-9",
+        price: price,
+        compareAt: compareAt,
+        badge: "New NY Arrival",
+        badgeColor: "pink",
+        rating: 5.0,
+        reviews: 14,
+        image: currentImageDataUrl,
+        tiktokUrl: "https://www.tiktok.com/@lightstoysaction",
+        videoReelId: "reel-1",
+        shortDesc: `Fresh arrival from our NY warehouse (SKU: ${sku}) — 100% verified quality!`,
+        description: `Brand-new arrival straight from our New York distributor (SKU: ${sku}). Limited first-batch stock available online and at our Long Island pop-up tent!`,
+        specs: [`Official SKU: ${sku}`, "Fresh NY Warehouse Arrival", "30-Day Satisfaction Guarantee"]
+      };
+
+      const drops = loadCustomDrops();
+      drops.unshift(newProduct);
+      saveCustomDrops(drops);
+
+      document.getElementById("script-hook-text").innerHTML =
+        `<strong>[0:00–0:03 Hook]:</strong> "This <em>${name}</em> just landed in our New York warehouse 20 minutes ago—and if your kid loves ${catLabels[cat]}, watch this..."<br><br>` +
+        `<strong>[0:03–0:15 Demo]:</strong> Show close-up texture/lights at -0.5 exposure, shift angle every 2 seconds.<br><br>` +
+        `<strong>[0:15–0:20 CTA]:</strong> "We only grabbed 2 cases from Maspeth for our first drop at $${price.toFixed(2)}—tap the orange cart or use code TIKTOK15 on lightstoysaction.com before this box is gone!"`;
+    }
+
+    function removeDrop(id) {
+      const drops = loadCustomDrops().filter(d => d.id !== id);
+      saveCustomDrops(drops);
+    }
+
+    function renderCustomDrops() {
+      const container = document.getElementById("custom-drops-list");
+      const drops = loadCustomDrops();
+      if (drops.length === 0) {
+        container.innerHTML = `<div class="text-center py-8 text-xs text-slate-500 border border-dashed border-slate-800 rounded-2xl">Click <strong>"Test Chinese WhatsApp Drop"</strong> on the left to see a Chinese message auto-translate into clean English!</div>`;
+        return;
+      }
+      container.innerHTML = drops.map(d => `
+        <div class="flex items-center gap-3 bg-slate-950 p-3 rounded-2xl border border-slate-800">
+          <img src="${d.image}" class="w-14 h-14 rounded-xl object-contain bg-white p-1" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full">${d.sku}</span>
+              <span class="text-xs text-slate-400">${d.categoryLabel}</span>
+            </div>
+            <h4 class="font-bold text-sm text-white truncate mt-0.5">${d.name}</h4>
+            <p class="text-xs text-cyan-400 font-extrabold">$${d.price.toFixed(2)} <span class="text-slate-500 line-through font-normal">$${d.compareAt.toFixed(2)}</span></p>
+          </div>
+          <button onclick="removeDrop('${d.id}')" class="text-xs text-rose-400 hover:text-rose-300 px-2 py-1"><i class="fas fa-trash"></i></button>
+        </div>
+      `).join("");
+    }
+
+    function downloadUpdatedShopifyCSV() {
+      const all = [...loadCustomDrops(), ...(window.LTA_PRODUCTS || [])];
+      let csv = "Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Status\n";
+      for (const p of all) {
+        const handle = (p.name + "-" + p.sku).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const title = `"${p.name.replace(/"/g, '""')}"`;
+        const body = `"<p>${p.description.replace(/"/g, '""')}</p>"`;
+        const type = `"${p.categoryLabel.replace(/"/g, '""')}"`;
+        const tags = `"${p.categoryLabel}, ${p.badge}, ${p.sku}"`;
+        csv += `${handle},${title},${body},"Lights Toys Action","Toys & Games",${type},${tags},TRUE,Title,Default Title,${p.sku},220,shopify,60,deny,manual,${p.price.toFixed(2)},${p.compareAt.toFixed(2)},TRUE,TRUE,active\n`;
+      }
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "lights_toys_action_shopify_import.csv";
+      a.click();
+    }
+
+    renderCustomDrops();
+  </script>
+</body>
+</html>

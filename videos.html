@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos & TikTok Shop Hub | Lights Toys Action</title>
+  <meta name="description" content="Watch Lights Toys Action videos, TikTok toy demos, and live New York festival reels. Shop directly from our videos!" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-950 text-white">
+
+  <!-- TOP PROMO BAR -->
+  <div class="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 text-white text-xs md:text-sm font-bold py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <span><i class="fab fa-tiktok mr-1"></i>Came from TikTok? Click to apply <button onclick="window.LTA.applyPromo('TIKTOK15')" class="underline text-yellow-300 font-extrabold">TIKTOK15</button> for 15% OFF your entire website order!</span>
+      <a href="https://www.tiktok.com/@lightstoysaction" target="_blank" rel="noopener" class="text-xs underline hover:text-yellow-200">@lightstoysaction on TikTok</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-slate-950/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/brand/logo.png" alt="Lights Toys Action Logo" class="h-12 md:h-14 w-auto object-contain" />
+        <div class="hidden sm:block">
+          <span class="font-display text-lg md:text-xl font-extrabold text-white block leading-none">
+            LIGHTS <span class="text-cyan-400">TOYS!</span> <span class="text-pink-500">ACTION</span>
+          </span>
+          <span class="text-[11px] text-pink-400 font-semibold uppercase">TikTok &amp; Video Showroom</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-bold text-slate-200">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="shop.html" class="hover:text-cyan-400 transition">Shop All Toys</a>
+        <a href="videos.html" class="text-pink-400 flex items-center gap-1.5"><i class="fab fa-tiktok"></i> Videos &amp; TikTok</a>
+        <a href="events.html" class="hover:text-cyan-400 transition">NY Events &amp; Tent</a>
+        <a href="about.html" class="hover:text-cyan-400 transition">About &amp; Wholesale</a>
+      </nav>
+      <div class="flex items-center gap-2.5">
+        <button onclick="window.LTA.openCart()" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2.5 rounded-full flex items-center gap-2 border border-slate-700">
+          <i class="fas fa-shopping-cart text-cyan-400"></i>
+          <span class="text-xs font-bold hidden md:inline">Cart</span>
+          <span class="cart-count-badge bg-pink-500 text-white text-xs font-extrabold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+        <button id="mobile-menu-btn" class="lg:hidden bg-slate-800 text-white w-10 h-10 rounded-xl flex items-center justify-center border border-slate-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-4 py-4 space-y-2 text-sm font-bold text-white">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="shop.html" class="block py-2">Shop All Toys</a>
+      <a href="videos.html" class="block py-2 text-pink-400">Videos &amp; TikTok</a>
+      <a href="events.html" class="block py-2">NY Events &amp; Tent</a>
+      <a href="about.html" class="block py-2">About &amp; Wholesale</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-14 bg-lta-dark-gradient border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-flex items-center gap-2 bg-pink-500/20 border border-pink-500/40 text-pink-300 text-xs font-extrabold px-4 py-1.5 rounded-full mb-3">
+        <i class="fab fa-tiktok"></i> WATCH IT • LOVE IT • SHOP IT
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-3">
+        Lights, Camera, <span class="text-lta-gradient">Toys in Action!</span>
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base mb-6">
+        Watch our official promo video, explore our 4 shared Google Photos video &amp; event vaults, and shop every toy featured in our TikTok videos with one click!
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://www.tiktok.com/@lightstoysaction" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-extrabold px-7 py-3.5 rounded-full shadow-lg flex items-center gap-2 text-sm">
+          <i class="fab fa-tiktok text-lg"></i> Visit @lightstoysaction on TikTok
+        </a>
+        <button onclick="window.LTA.applyPromo('TIKTOK15'); window.LTA.openCart();" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-6 py-3.5 rounded-full text-sm transition">
+          <i class="fas fa-tag text-yellow-400 mr-1.5"></i> Claim 15% TikTok Discount (TIKTOK15)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPPABLE REELS GRID -->
+  <section class="py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold mb-6 flex items-center gap-2">
+        <i class="fas fa-fire text-pink-500"></i> Shoppable Video Reels &amp; Google Photos Vault
+      </h2>
+      <div id="video-reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-14"></div>
+
+      <!-- FEATURED LARGE VIDEO PLAYER + SHARED MEDIA LINKS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 items-center">
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden border-2 border-cyan-500/40 bg-black shadow-2xl">
+            <video src="assets/video/promo-reel.mp4" poster="assets/events/sonic-tent.jpg" controls playsinline class="w-full max-h-[460px] object-contain mx-auto"></video>
+          </div>
+        </div>
+        <div class="lg:col-span-6 space-y-5">
+          <span class="bg-cyan-500/20 text-cyan-300 text-xs font-extrabold px-3 py-1 rounded-full">SHARED GOOGLE PHOTOS &amp; VIDEO LINKS</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold">All 4 Shared Media Vaults Connected</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Every photo and video clip from your Google Photos shares is linked right here so customers and followers can see real event footage, toy unboxings, and booth setups:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="https://photos.app.goo.gl/sVn3qhepB58fgwjj9" target="_blank" rel="noopener" class="bg-slate-950 hover:border-cyan-400 border border-slate-700 p-4 rounded-2xl flex items-center gap-3 transition">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg"><i class="fas fa-video"></i></div>
+              <div>
+                <div class="font-bold text-sm text-white">Google Photos Vault #1</div>
+                <div class="text-xs text-cyan-400">sVn3qhepB58fgwjj9 <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i></div>
+              </div>
+            </a>
+            <a href="https://photos.app.goo.gl/FZjwMrCTcKo2xPqy6" target="_blank" rel="noopener" class="bg-slate-950 hover:border-pink-400 border border-slate-700 p-4 rounded-2xl flex items-center gap-3 transition">
+              <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg"><i class="fas fa-video"></i></div>
+              <div>
+                <div class="font-bold text-sm text-white">Google Photos Vault #2</div>
+                <div class="text-xs text-pink-400">FZjwMrCTcKo2xPqy6 <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i></div>
+              </div>
+            </a>
+            <a href="https://photos.app.goo.gl/tvWbFKv3MoHSqx7T7" target="_blank" rel="noopener" class="bg-slate-950 hover:border-purple-400 border border-slate-700 p-4 rounded-2xl flex items-center gap-3 transition">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg"><i class="fas fa-video"></i></div>
+              <div>
+                <div class="font-bold text-sm text-white">Google Photos Vault #3</div>
+                <div class="text-xs text-purple-400">tvWbFKv3MoHSqx7T7 <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i></div>
+              </div>
+            </a>
+            <a href="https://photos.app.goo.gl/uTSuXmuwxpMDDcdk6" target="_blank" rel="noopener" class="bg-slate-950 hover:border-amber-400 border border-slate-700 p-4 rounded-2xl flex items-center gap-3 transition">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg"><i class="fas fa-video"></i></div>
+              <div>
+                <div class="font-bold text-sm text-white">Google Photos Vault #4</div>
+                <div class="text-xs text-amber-400">uTSuXmuwxpMDDcdk6 <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <img src="assets/brand/logo.png" alt="Logo" class="h-12 mx-auto mb-3" />
+      <p>&copy; 2026 Lights Toys Action • Franklin Square &amp; Maspeth, NY • (516) 426-6794</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cart-backdrop" onclick="window.LTA.closeCart()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-50"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white text-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    <div class="p-4 bg-slate-950 text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-shopping-cart text-cyan-400"></i>
+        <h3 class="font-display font-bold text-lg">Your Toy Cart</h3>
+        <span class="cart-count-badge bg-pink-500 text-white text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+      </div>
+      <button onclick="window.LTA.closeCart()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200">
+      <p id="free-ship-msg" class="text-xs text-slate-700 mb-1.5">Add $50.00 more for FREE Shipping!</p>
+      <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden"><div id="free-ship-progress" class="h-full bg-lta-gradient transition-all duration-300" style="width: 0%"></div></div>
+    </div>
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+    <div class="p-4 bg-slate-50 border-t border-slate-200 space-y-3">
+      <div class="space-y-1 text-xs text-slate-600">
+        <div class="flex justify-between"><span>Subtotal</span><span id="cart-subtotal" class="font-bold text-slate-800">$0.00</span></div>
+        <div id="cart-discount-row" class="hidden flex justify-between text-emerald-600 font-bold"><span>Promo Discount</span><span id="cart-discount">-$0.00</span></div>
+        <div class="flex justify-between"><span>Estimated Shipping</span><span id="cart-shipping" class="font-bold text-slate-800">$5.99</span></div>
+        <div class="flex justify-between text-base font-extrabold text-slate-900 pt-1 border-t border-slate-200"><span>Total</span><span id="cart-total">$0.00</span></div>
+      </div>
+      <button onclick="window.LTA.openCheckout()" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg"><i class="fas fa-lock mr-1"></i> Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <div id="checkout-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 overflow-y-auto text-slate-900">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl relative my-8">
+      <button onclick="window.LTA.closeCheckout()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center"><i class="fas fa-times"></i></button>
+      <h3 class="text-xl font-extrabold mb-4">Fast &amp; Secure Checkout</h3>
+      <div id="checkout-summary-box" class="bg-slate-50 p-4 rounded-2xl border border-slate-200 mb-5"></div>
+      <form id="checkout-form" class="space-y-3.5">
+        <input type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        <input type="email" required placeholder="Email for Tracking" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        <input type="text" required placeholder="Shipping Address" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        <button type="submit" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg">Complete Order Now</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

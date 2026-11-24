@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lights Toys Action! | NY's Ultimate Toy Store, TikTok Shop & Light-Up Toys</title>
+  <meta name="description" content="Where imagination comes to play! Shop glowing LED night toys, Pokémon plushies, Sanrio plush backpacks, viral gaming toys & puppets from Lights Toys Action — powered by NY's largest toy distributor, Happy Toys." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- TOP PROMO ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white text-xs md:text-sm font-bold py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="bg-black/30 px-2.5 py-0.5 rounded-full text-yellow-300"><i class="fas fa-bolt mr-1"></i>NEW YORK'S TOY HQ</span>
+        <span>Free US Shipping on Orders $50+ • Or Use Code <button onclick="window.LTA.applyPromo('TIKTOK15')" class="underline decoration-yellow-300 text-yellow-200 hover:text-white">TIKTOK15</button> for 15% OFF!</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-xs">
+        <a href="#tiktok-action" class="hover:text-yellow-200 transition"><i class="fab fa-tiktok mr-1"></i>Watch Toys in Action</a>
+        <a href="#ny-events" class="hover:text-yellow-200 transition"><i class="fas fa-location-dot mr-1"></i>Long Island &amp; NYC Pop-Ups</a>
+        <button onclick="window.LTA.openCustomRequest()" class="bg-white/20 hover:bg-white/30 px-2.5 py-0.5 rounded-full transition">
+          <i class="fas fa-boxes-stacked mr-1"></i>Happy Toys NY Wholesale Finder
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION HEADER -->
+  <header class="bg-slate-950/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/brand/logo.png" alt="Lights Toys Action Logo" class="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition" />
+        <div class="hidden sm:block">
+          <span class="font-display text-lg md:text-xl font-extrabold tracking-tight text-white block leading-none">
+            LIGHTS <span class="text-cyan-400">TOYS!</span> <span class="text-pink-500">ACTION</span>
+          </span>
+          <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">New York • TikTok Shop • Nationwide</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-bold text-slate-200">
+        <a href="index.html" class="text-cyan-400">Home</a>
+        <a href="shop.html" class="hover:text-cyan-400 transition">Shop All Toys</a>
+        <a href="videos.html" class="hover:text-pink-400 transition flex items-center gap-1.5">
+          <i class="fab fa-tiktok text-pink-500"></i> Videos &amp; TikTok
+        </a>
+        <a href="events.html" class="hover:text-cyan-400 transition">NY Events &amp; Tent</a>
+        <a href="playbook.html" class="text-yellow-400 hover:text-yellow-300 transition flex items-center gap-1"><i class="fas fa-rocket"></i> TikTok Playbook</a>
+        <a href="uploader.html" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1"><i class="fab fa-whatsapp"></i> WhatsApp Uploader</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <a href="https://www.tiktok.com/@lightstoysaction" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white text-xs font-extrabold px-4 py-2.5 rounded-full shadow-lg transition">
+          <i class="fab fa-tiktok"></i> TikTok Shop
+        </a>
+        <button onclick="window.LTA.openCart()" class="relative bg-slate-800 hover:bg-slate-700 text-white px-4 py-2.5 rounded-full flex items-center gap-2 border border-slate-700 transition">
+          <i class="fas fa-shopping-cart text-cyan-400"></i>
+          <span class="text-xs font-bold hidden md:inline">Cart</span>
+          <span class="cart-count-badge bg-pink-500 text-white text-xs font-extrabold w-5 h-5 rounded-full flex items-center justify-center transition">0</span>
+        </button>
+        <button id="mobile-menu-btn" class="lg:hidden bg-slate-800 text-white w-10 h-10 rounded-xl flex items-center justify-center border border-slate-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-nav-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-4 py-4 space-y-2 text-sm font-bold text-white">
+      <a href="index.html" class="block py-2 text-cyan-400">Home</a>
+      <a href="shop.html" class="block py-2 hover:text-cyan-400">Shop All Toys (36+ Items)</a>
+      <a href="videos.html" class="block py-2 text-pink-400"><i class="fab fa-tiktok mr-1"></i> Watch Toy Videos &amp; TikTok Hub</a>
+      <a href="events.html" class="block py-2 hover:text-cyan-400">NY Street Fairs &amp; Fireworks Tent</a>
+      <a href="about.html" class="block py-2 hover:text-cyan-400">About Us &amp; Happy Toys NY Access</a>
+      <a href="playbook.html" class="block py-2 text-yellow-400"><i class="fas fa-rocket mr-1"></i> Owner's TikTok Shop Playbook</a>
+      <a href="uploader.html" class="block py-2 text-emerald-400"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Daily Drop Uploader</a>
+      <a href="#contact-section" class="block py-2 hover:text-cyan-400">Contact &amp; Custom Toy Requests</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION (Inspired by PDF Mockup + Upgraded with Live Video & Real Branding) -->
+  <section class="bg-lta-dark-gradient text-white py-14 md:py-20 relative overflow-hidden">
+    <!-- Decorative Neon Orbs -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 px-4 py-1.5 rounded-full text-xs font-bold text-cyan-300">
+            <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span>
+            DIRECT ACCESS TO HAPPY TOYS NYC • 20+ YEARS OF FAMILY FUN
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Welcome to <span class="text-lta-gradient">Lights Toys Action!</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Where imagination comes to play! Discover our electric collection of toys that <strong class="text-cyan-300">light up</strong>, <strong class="text-pink-400">move</strong>, and inspire endless fun—from viral TikTok plushies &amp; glowing night toys to Pokémon collectibles and interactive robots.
+          </p>
+
+          <!-- Primary Hero CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#shop-catalog-section" class="bg-lta-gradient text-white font-extrabold px-8 py-4 rounded-full shadow-xl hover:opacity-95 transition flex items-center gap-2 text-base animate-glow">
+              <i class="fas fa-bag-shopping"></i> Shop Featured Toys
+            </a>
+            <a href="#tiktok-action" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white font-bold px-7 py-4 rounded-full transition flex items-center gap-2 text-base">
+              <i class="fas fa-play-circle text-pink-400 text-lg"></i> Watch Toys in Action
+            </a>
+            <button onclick="window.LTA.openCustomRequest()" class="bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 text-cyan-300 font-bold px-6 py-3.5 rounded-full transition text-sm flex items-center gap-2">
+              <i class="fas fa-wand-magic-sparkles"></i> Request Any Toy (Happy Toys NY)
+            </button>
+          </div>
+
+          <!-- Trust Pills -->
+          <div class="pt-4 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 border-t border-slate-800/80">
+            <div>
+              <div class="text-2xl font-extrabold text-cyan-400">1,000+</div>
+              <div class="text-xs text-slate-400">Toys Available via Happy Toys NY</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-pink-400">20+ Yrs</div>
+              <div class="text-xs text-slate-400">NY Street Fairs &amp; Events</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-yellow-400">30-Day</div>
+              <div class="text-xs text-slate-400">100% Satisfaction Guarantee</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase (Official Electric Logo + Tent & Video Preview Card) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div class="relative w-full max-w-md">
+            <!-- Glowing Circle Emblem -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-purple-950 border-2 border-cyan-400/50 rounded-3xl p-6 shadow-2xl neon-glow-blue animate-float">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400"><i class="fas fa-star text-yellow-400 mr-1"></i>Official Storefront</span>
+                <span class="bg-pink-500/20 text-pink-300 border border-pink-500/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                  <i class="fab fa-tiktok mr-1"></i>@lightstoysaction
+                </span>
+              </div>
+              <div class="bg-slate-950 rounded-2xl p-4 flex items-center justify-center mb-4 border border-slate-800">
+                <img src="assets/brand/logo.png" alt="Lights Toys Action Electric Logo" class="max-h-48 w-auto object-contain" />
+              </div>
+              <!-- Mini Live Tent Photo Strip -->
+              <div class="grid grid-cols-3 gap-2.5">
+                <a href="#ny-events" class="group relative rounded-xl overflow-hidden h-20 border border-slate-700">
+                  <img src="assets/events/sonic-tent.jpg" alt="Lights Toys Action Tent" class="w-full h-full object-cover group-hover:scale-110 transition" />
+                  <span class="absolute bottom-1 left-1 right-1 bg-black/75 text-[9px] font-bold text-center text-white py-0.5 rounded">Our Tent</span>
+                </a>
+                <a href="#ny-events" class="group relative rounded-xl overflow-hidden h-20 border border-slate-700">
+                  <img src="assets/events/night-led-booth.jpg" alt="Night LED Booth" class="w-full h-full object-cover group-hover:scale-110 transition" />
+                  <span class="absolute bottom-1 left-1 right-1 bg-black/75 text-[9px] font-bold text-center text-cyan-300 py-0.5 rounded">LED Night</span>
+                </a>
+                <a href="#ny-events" class="group relative rounded-xl overflow-hidden h-20 border border-slate-700">
+                  <img src="assets/events/carnival-booth-1.jpg" alt="Carnival Plush Booth" class="w-full h-full object-cover group-hover:scale-110 transition" />
+                  <span class="absolute bottom-1 left-1 right-1 bg-black/75 text-[9px] font-bold text-center text-pink-300 py-0.5 rounded">Plush Wall</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP BY CATEGORY & AGE RANGE (Matches PDF Mockup + Filters Catalog Live) -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600">Explore By Interest &amp; Age</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+          Shop by <span class="text-lta-gradient">Category</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <button onclick="window.LTA.filterCategory('light-up'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-cyan-50 to-white hover:from-cyan-500 hover:to-blue-600 p-5 rounded-2xl border border-cyan-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500 group-hover:bg-white text-white group-hover:text-cyan-600 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">Light-Up &amp; LED</h3>
+          <p class="text-xs text-slate-500 group-hover:text-cyan-100">Robots, LED crowns, masks &amp; swords</p>
+        </button>
+
+        <button onclick="window.LTA.filterCategory('pokemon'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-amber-50 to-white hover:from-amber-500 hover:to-pink-500 p-5 rounded-2xl border border-amber-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500 group-hover:bg-white text-white group-hover:text-amber-500 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">Pokémon Plush</h3>
+          <p class="text-xs text-slate-500 group-hover:text-amber-100">Pikachu, Eeveelutions, Snorlax &amp; more</p>
+        </button>
+
+        <button onclick="window.LTA.filterCategory('backpacks'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-pink-50 to-white hover:from-pink-500 hover:to-rose-600 p-5 rounded-2xl border border-pink-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-pink-500 group-hover:bg-white text-white group-hover:text-pink-600 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">Sanrio &amp; Backpacks</h3>
+          <p class="text-xs text-slate-500 group-hover:text-pink-100">Hello Kitty, Kuromi, Cinnamoroll &amp; Boba</p>
+        </button>
+
+        <button onclick="window.LTA.filterCategory('gaming-plush'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-purple-50 to-white hover:from-purple-600 hover:to-indigo-600 p-5 rounded-2xl border border-purple-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-purple-600 group-hover:bg-white text-white group-hover:text-purple-600 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">Viral Gaming Plush</h3>
+          <p class="text-xs text-slate-500 group-hover:text-purple-100">Rainbow Friends &amp; Boxy Boo</p>
+        </button>
+
+        <button onclick="window.LTA.filterCategory('puppets'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-emerald-50 to-white hover:from-emerald-500 hover:to-teal-600 p-5 rounded-2xl border border-emerald-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500 group-hover:bg-white text-white group-hover:text-emerald-600 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-masks-theater"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">Hand Puppets</h3>
+          <p class="text-xs text-slate-500 group-hover:text-emerald-100">Jeffy, Rapper Jeffy &amp; JR comedy puppets</p>
+        </button>
+
+        <button onclick="window.LTA.filterCategory('stem-games'); document.getElementById('shop-catalog-section').scrollIntoView({behavior:'smooth'});" class="group bg-gradient-to-b from-blue-50 to-white hover:from-blue-600 hover:to-indigo-700 p-5 rounded-2xl border border-blue-200 text-left transition shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-blue-600 group-hover:bg-white text-white group-hover:text-blue-600 flex items-center justify-center text-xl mb-3 transition shadow">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 group-hover:text-white text-sm mb-1">STEM &amp; Playsets</h3>
+          <p class="text-xs text-slate-500 group-hover:text-blue-100">Science lab cases, castles &amp; games</p>
+        </button>
+      </div>
+
+      <!-- Quick Age Filter Bar -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs font-bold">
+        <span class="text-slate-400 uppercase tracking-wider mr-1">Quick Age Filter:</span>
+        <button onclick="window.LTA.filterAge('all')" class="px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-700 transition">All Ages</button>
+        <button onclick="window.LTA.filterAge('0-2')" class="px-3.5 py-1.5 rounded-full bg-cyan-50 hover:bg-cyan-500 hover:text-white text-cyan-700 transition"><i class="fas fa-baby mr-1"></i>Ages 0–2</button>
+        <button onclick="window.LTA.filterAge('3-5')" class="px-3.5 py-1.5 rounded-full bg-pink-50 hover:bg-pink-500 hover:text-white text-pink-700 transition"><i class="fas fa-child mr-1"></i>Ages 3–5</button>
+        <button onclick="window.LTA.filterAge('6-9')" class="px-3.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-500 hover:text-white text-amber-700 transition"><i class="fas fa-running mr-1"></i>Ages 6–9</button>
+        <button onclick="window.LTA.filterAge('9-12')" class="px-3.5 py-1.5 rounded-full bg-purple-50 hover:bg-purple-600 hover:text-white text-purple-700 transition"><i class="fas fa-headset mr-1"></i>Ages 9–12+</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PRODUCT CATALOG SECTION -->
+  <section id="shop-catalog-section" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-pink-600">Direct From Our NY Inventory</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+            Featured <span class="text-lta-gradient">Toys &amp; Plushies</span>
+          </h2>
+          <p id="product-result-count" class="text-xs font-semibold text-slate-500 mt-1">Showing toys</p>
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="relative">
+            <input id="product-search" type="text" placeholder="Search Pikachu, robot, Kuromi..." class="w-60 sm:w-72 pl-9 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 text-sm focus:outline-none focus:border-cyan-500 shadow-sm" />
+            <i class="fas fa-search absolute left-3 top-3 text-slate-400 text-sm"></i>
+          </div>
+          <select id="filter-age" class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-semibold text-slate-700 focus:outline-none">
+            <option value="all">All Ages</option>
+            <option value="0-2">Ages 0–2</option>
+            <option value="3-5">Ages 3–5</option>
+            <option value="6-9">Ages 6–9</option>
+            <option value="9-12">Ages 9–12+</option>
+          </select>
+          <select id="filter-sort" class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-semibold text-slate-700 focus:outline-none">
+            <option value="featured">Sort: Featured</option>
+            <option value="reviews">Most Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap gap-2 mb-8">
+        <button data-cat="all" onclick="window.LTA.filterCategory('all')" class="cat-pill active px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          All Toys (121)
+        </button>
+        <button data-cat="light-up" onclick="window.LTA.filterCategory('light-up')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-lightbulb mr-1 text-cyan-500"></i> Light-Up &amp; Interactive
+        </button>
+        <button data-cat="pokemon" onclick="window.LTA.filterCategory('pokemon')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-bolt mr-1 text-amber-500"></i> Pokémon Plush
+        </button>
+        <button data-cat="backpacks" onclick="window.LTA.filterCategory('backpacks')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-bag-shopping mr-1 text-pink-500"></i> Plush Backpacks &amp; Sanrio
+        </button>
+        <button data-cat="gaming-plush" onclick="window.LTA.filterCategory('gaming-plush')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-gamepad mr-1 text-purple-500"></i> Viral Gaming Plush
+        </button>
+        <button data-cat="puppets" onclick="window.LTA.filterCategory('puppets')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-masks-theater mr-1 text-emerald-500"></i> Hand Puppets
+        </button>
+        <button data-cat="stem-games" onclick="window.LTA.filterCategory('stem-games')" class="cat-pill px-4 py-2 rounded-full text-xs font-extrabold border border-slate-300 bg-white text-slate-700 transition">
+          <i class="fas fa-flask mr-1 text-blue-500"></i> Playsets &amp; STEM
+        </button>
+      </div>
+
+      <!-- Dynamic Products Grid (Shows 12 on homepage, or all when filtered; full 36 on shop.html) -->
+      <div id="products-grid" data-limit="12" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+      <div class="text-center mt-10 flex flex-wrap justify-center gap-4">
+        <a href="shop.html" class="bg-slate-900 hover:bg-cyan-600 text-white font-extrabold px-8 py-4 rounded-full shadow-lg transition inline-flex items-center gap-2">
+          View All 121 Products in Full Catalog <i class="fas fa-arrow-right"></i>
+        </a>
+        <button onclick="document.getElementById('products-grid').removeAttribute('data-limit'); window.LTA.filterCategory('all');" class="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold px-6 py-4 rounded-full shadow-sm transition">
+          Expand All Toys Here
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEE OUR TOYS IN ACTION: TIKTOK & VIDEO SHOWCASE HUB -->
+  <section id="tiktok-action" class="py-16 bg-slate-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 bg-pink-500/20 border border-pink-500/40 text-pink-300 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+            <i class="fab fa-tiktok"></i> WATCH &amp; SHOP LIVE
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold">
+            See Our <span class="text-lta-gradient">Toys in Action!</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-2xl">
+            Every video we post on TikTok and capture at our New York events lives right here. Watch the demos, see real family reactions, and add your favorites straight to your cart!
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.tiktok.com/@lightstoysaction" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-95 text-white font-bold text-sm px-6 py-3 rounded-full shadow-lg flex items-center gap-2">
+            <i class="fab fa-tiktok"></i> Follow @lightstoysaction
+          </a>
+          <a href="videos.html" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm px-5 py-3 rounded-full transition">
+            Open Full Video Hub <i class="fas fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 Interactive Vertical Video Reel Cards (1 Local MP4 + 4 Shared Google Photos Video Clips) -->
+      <div id="video-reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-12"></div>
+
+      <!-- Direct Google Photos Vault & Customer Reactions Bar (From PDF Design) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-slate-900/90 border border-slate-800 rounded-3xl p-6 md:p-8">
+        <div class="lg:col-span-5 flex flex-col justify-between bg-slate-950 p-6 rounded-2xl border border-slate-800">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Direct Media Vault</span>
+            <h3 class="text-xl font-bold text-white mt-1 mb-2">Shared Google Photos &amp; Event Clips</h3>
+            <p class="text-xs text-slate-400 mb-4">
+              Click any of our 4 official Google Photos albums &amp; video clips below to view our raw event footage and toy showcases:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <a href="https://photos.app.goo.gl/sVn3qhepB58fgwjj9" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-cyan-950 border border-slate-700 hover:border-cyan-500 p-3 rounded-xl flex items-center gap-2.5 transition">
+                <i class="fas fa-photo-film text-cyan-400 text-lg"></i>
+                <div class="text-xs">
+                  <div class="font-bold text-white">Toy Vault Clip #1</div>
+                  <div class="text-slate-400 text-[10px]">photos.app.goo.gl/sVn3...</div>
+                </div>
+              </a>
+              <a href="https://photos.app.goo.gl/FZjwMrCTcKo2xPqy6" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-pink-950 border border-slate-700 hover:border-pink-500 p-3 rounded-xl flex items-center gap-2.5 transition">
+                <i class="fas fa-photo-film text-pink-400 text-lg"></i>
+                <div class="text-xs">
+                  <div class="font-bold text-white">Toy Vault Clip #2</div>
+                  <div class="text-slate-400 text-[10px]">photos.app.goo.gl/FZjw...</div>
+                </div>
+              </a>
+              <a href="https://photos.app.goo.gl/tvWbFKv3MoHSqx7T7" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-purple-950 border border-slate-700 hover:border-purple-500 p-3 rounded-xl flex items-center gap-2.5 transition">
+                <i class="fas fa-photo-film text-purple-400 text-lg"></i>
+                <div class="text-xs">
+                  <div class="font-bold text-white">Toy Vault Clip #3</div>
+                  <div class="text-slate-400 text-[10px]">photos.app.goo.gl/tvWb...</div>
+                </div>
+              </a>
+              <a href="https://photos.app.goo.gl/uTSuXmuwxpMDDcdk6" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-amber-950 border border-slate-700 hover:border-amber-500 p-3 rounded-xl flex items-center gap-2.5 transition">
+                <i class="fas fa-photo-film text-amber-400 text-lg"></i>
+                <div class="text-xs">
+                  <div class="font-bold text-white">Toy Vault Clip #4</div>
+                  <div class="text-slate-400 text-[10px]">photos.app.goo.gl/uTSu...</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Use TikTok code at checkout:</span>
+            <button onclick="window.LTA.applyPromo('TIKTOK15')" class="bg-pink-500/20 border border-pink-500/50 text-pink-300 text-xs font-extrabold px-3 py-1 rounded-lg hover:bg-pink-500 hover:text-white transition">
+              Apply Code: TIKTOK15
+            </button>
+          </div>
+        </div>
+
+        <!-- Customer Reactions (Directly from PDF Design) -->
+        <div class="lg:col-span-7 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <i class="fas fa-comments text-cyan-400"></i> Real Customer &amp; Parent Reactions
+            </h3>
+            <div class="space-y-3.5">
+              <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-full bg-cyan-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0">SP</div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-white text-sm">Sarah P. • Long Island, NY</span>
+                    <span class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1">"My kids love the Interactive Robot and their Umbreon plush! We first met Chris at the Seaford fair and now we order birthday gifts right from the website!"</p>
+                </div>
+              </div>
+
+              <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-full bg-pink-500 text-white font-extrabold flex items-center justify-center shrink-0">MT</div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-white text-sm">Mike T. • Massapequa, NY</span>
+                    <span class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1">"The LED Flower Crowns and Pixel Swords were the biggest hit at the Jones Beach 4th of July fireworks! Ordering a bulk party pack for my son's birthday."</p>
+                </div>
+              </div>
+
+              <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center shrink-0">EL</div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-white text-sm">Emma L. • Queens, NY</span>
+                    <span class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1">"My daughter saw the Cinnamoroll and Kuromi plush backpacks on TikTok and was obsessed. Super fast shipping from NY and the quality is amazing!"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAPPY TOYS NYC WHOLESALE POWERHOUSE BANNER ("WE CAN GET ANY TOY!") -->
+  <section class="py-14 bg-gradient-to-r from-cyan-600 via-purple-700 to-pink-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="bg-slate-950/85 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <div class="inline-flex items-center gap-2 bg-yellow-400 text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase">
+            <i class="fas fa-warehouse"></i> Powered by Happy Toys (Maspeth, NY)
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">
+            Looking for a Specific Toy or Bulk Party Favor Box? We Have Direct Distributor Access!
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Because Lights Toys Action partners directly with <strong>Happy Toys</strong>—New York's largest toy distributor—we have instant access to thousands of trending plushies, light-up novelties, action figures, and games. If you don't see it listed yet, or if you need 20+ toys for a birthday party, school carnival, or fundraising event, tell us what you need!
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+          <button onclick="window.LTA.openCustomRequest()" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 px-6 rounded-2xl shadow-xl transition text-center text-base">
+            <i class="fas fa-wand-magic-sparkles mr-2"></i> Request Any Toy / Party Bundle
+          </button>
+          <a href="tel:5164266794" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-3 px-6 rounded-2xl transition text-center text-sm">
+            <i class="fas fa-phone mr-2 text-cyan-400"></i> Call Direct: (516) 426-6794
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE NY STREET FAIRS, FIREWORKS & POP-UP TENT SCHEDULE -->
+  <section id="ny-events" class="py-16 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Long Island • Queens • NYC</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-1">
+            Catch the <span class="text-lta-gradient">Lights Toys Action Tent</span> Live!
+          </h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-2xl">
+            With over 20 years serving New York families at street fairs, carnivals, and fireworks shows, you can shop online 24/7 or use code <strong class="text-yellow-300">NYPICKUP</strong> for 10% off &amp; free pickup at our next event!
+          </p>
+        </div>
+        <a href="events.html" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-sm px-6 py-3 rounded-full shadow-lg transition self-start md:self-auto">
+          View Full NY Event Calendar &amp; Book Our Tent <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <!-- Dynamic NY Events Cards -->
+      <div id="ny-events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT LIGHTS TOYS ACTION (From PDF Design + Real NY Story) -->
+  <section id="about-section" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-purple-600">Franklin Square &amp; Maspeth, NY</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+          About <span class="text-lta-gradient">Lights Toys Action</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12">
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="text-2xl font-bold text-slate-900">Our Story</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Founded in New York by Chris Anastasi, <strong>Lights Toys Action</strong> (and our event division, <em>Tasty Treats NYC</em>) brings over 20 years of hands-on experience delighting families across Long Island and NYC street fairs, fireworks spectaculars, and carnivals.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Through our direct partnership with <strong>Happy Toys in Maspeth, NY</strong>—the largest toy distributor in New York—we hand-pick toys that light up, move, and spark real excitement, bringing carnival-level joy straight to your doorstep via our website and TikTok Shop.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="bg-cyan-50 p-4 rounded-2xl border border-cyan-100 text-center">
+              <i class="fas fa-child-reaching text-2xl text-cyan-600 mb-2"></i>
+              <h4 class="font-bold text-sm text-slate-900">Child-Centered</h4>
+              <p class="text-xs text-slate-600 mt-1">Tested at real family events for maximum joy.</p>
+            </div>
+            <div class="bg-pink-50 p-4 rounded-2xl border border-pink-100 text-center">
+              <i class="fas fa-bolt text-2xl text-pink-600 mb-2"></i>
+              <h4 class="font-bold text-sm text-slate-900">NY Distributor Direct</h4>
+              <p class="text-xs text-slate-600 mt-1">Happy Toys Maspeth access means unbeatable prices.</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-2xl border border-purple-100 text-center">
+              <i class="fas fa-shield-heart text-2xl text-purple-600 mb-2"></i>
+              <h4 class="font-bold text-sm text-slate-900">Quality First</h4>
+              <p class="text-xs text-slate-600 mt-1">Safe, durable, and backed by our 30-day guarantee.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <img src="assets/events/sonic-tent.jpg" alt="Lights Toys Action Custom Tent" class="rounded-2xl shadow-lg w-full h-56 object-cover" />
+          <img src="assets/events/riverhead-tent.jpg" alt="Families Shopping at Lights Toys Action" class="rounded-2xl shadow-lg w-full h-56 object-cover" />
+          <img src="assets/events/carnival-booth-2.jpg" alt="Squishmallows and Plush Booth" class="rounded-2xl shadow-lg w-full h-56 object-cover col-span-2" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ & SHIPPING / RETURN POLICY SECTION (Matches PDF Mockup) -->
+  <section id="faq-section" class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+          Frequently Asked <span class="text-lta-gradient">Questions</span>
+        </h2>
+      </div>
+
+      <div class="space-y-3 mb-14">
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between">
+            <span>How long does shipping take from New York?</span>
+            <i class="fas fa-plus faq-icon text-cyan-600 transition-transform"></i>
+          </button>
+          <div class="px-6 pb-4 text-sm text-slate-600">
+            We process orders within 1–2 business days directly from our New York operation. Standard shipping takes 3–5 business days, Express takes 2–3 business days, and orders over $50 ship FREE across the continental US!
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between">
+            <span>Can I request a toy that isn't listed on the website yet?</span>
+            <i class="fas fa-plus faq-icon text-cyan-600 transition-transform"></i>
+          </button>
+          <div class="hidden px-6 pb-4 text-sm text-slate-600">
+            Yes! Because we have direct access to <strong>Happy Toys</strong> (New York's largest online &amp; wholesale toy distributor), we can source thousands of plushies, action figures, light-up toys, and party favors. Click "Request Any Toy" anywhere on our site to tell us what you're looking for!
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between">
+            <span>How does the TikTok Shop &amp; Website connection work?</span>
+            <i class="fas fa-plus faq-icon text-cyan-600 transition-transform"></i>
+          </button>
+          <div class="hidden px-6 pb-4 text-sm text-slate-600">
+            You can buy directly on this website OR on our official TikTok Shop (<strong>@lightstoysaction</strong>). Followers who come from TikTok can use promo code <strong>TIKTOK15</strong> at checkout on our website for 15% off!
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-slate-900 flex items-center justify-between">
+            <span>What is your return &amp; satisfaction policy?</span>
+            <i class="fas fa-plus faq-icon text-cyan-600 transition-transform"></i>
+          </button>
+          <div class="hidden px-6 pb-4 text-sm text-slate-600">
+            We offer a 30-Day Satisfaction Guarantee on all our toys. Unused items in original packaging can be returned within 30 days for a full refund or exchange, and any item that arrives damaged is replaced free of charge.
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping & Return Policy Card (From PDF Mockup) -->
+      <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-extrabold text-cyan-600 mb-3"><i class="fas fa-truck-fast mr-2"></i>Shipping Policy</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+            <li>• <strong>Processing Time:</strong> 1–2 business days from NY.</li>
+            <li>• <strong>Standard Shipping (3–5 days):</strong> $5.99</li>
+            <li>• <strong>Express Shipping (2–3 days):</strong> $12.99</li>
+            <li>• <strong>FREE Shipping:</strong> On all orders over $50 (Continental US) or with code <strong>NYPICKUP</strong> at our Long Island / NYC events!</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold text-pink-600 mb-3"><i class="fas fa-rotate-left mr-2"></i>30-Day Return Guarantee</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+            <li>• <strong>30-Day Satisfaction Guarantee:</strong> Full refund or exchange within 30 days of delivery.</li>
+            <li>• <strong>Damaged or Defective Items:</strong> Contact us within 7 days for an instant free replacement.</li>
+            <li>• <strong>Fast Refunds:</strong> Processed within 3–5 business days to your original payment method.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH CONTACT SECTION (Matches PDF Mockup) -->
+  <section id="contact-section" class="py-16 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Get in <span class="text-yellow-300">Touch</span></h2>
+        <p class="text-blue-100 text-sm mt-1">Questions about an order, custom toy request, or booking our tent for your NY event? Reach out anytime!</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 bg-white text-slate-900 rounded-3xl p-6 md:p-8 shadow-2xl">
+          <h3 class="text-xl font-extrabold mb-4">Send Us a Message</h3>
+          <form class="lta-async-form space-y-4" data-success-msg="Message sent! Chris & the Lights Toys Action team will reply shortly.">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Your Name</label>
+                <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-cyan-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Email Address</label>
+                <input type="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-cyan-500" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Topic</label>
+              <select class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-cyan-500">
+                <option>Order Question / Customer Support</option>
+                <option>Request a Toy from Happy Toys NY Catalog</option>
+                <option>Bulk Birthday Party / School Event Order</option>
+                <option>Book Lights Toys Action Tent for a NY Fair/Event</option>
+                <option>TikTok Shop Collaboration</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Your Message</label>
+              <textarea rows="4" required placeholder="Tell us what toy you're looking for or how we can help..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 space-y-5">
+            <h3 class="text-xl font-extrabold">Contact Information</h3>
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-cyan-400 text-slate-950 flex items-center justify-center shrink-0 font-bold"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div class="font-bold text-sm">Location &amp; Dispatch</div>
+                <div class="text-xs text-blue-100">Franklin Square, Long Island, NY • Distributor Partner in Maspeth, Queens NY</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0 font-bold"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="font-bold text-sm">Phone / Text</div>
+                <a href="tel:5164266794" class="text-xs text-yellow-300 hover:underline font-bold">(516) 426-6794</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-purple-500 text-white flex items-center justify-center shrink-0 font-bold"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="font-bold text-sm">Email</div>
+                <a href="mailto:lightstoysactionny@gmail.com" class="text-xs text-blue-100 hover:underline">lightstoysactionny@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 font-bold"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="font-bold text-sm">Support &amp; Live Event Hours</div>
+                <div class="text-xs text-blue-100">Mon–Sat: 9am – 7pm EST • Weekend Pop-Ups Across Long Island &amp; NYC</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-white/15 rounded-3xl p-6 text-center">
+            <h4 class="font-bold text-sm mb-3">Connect With Us &amp; Watch Daily Toy Drops</h4>
+            <div class="flex justify-center gap-3">
+              <a href="https://www.tiktok.com/@lightstoysaction" target="_blank" rel="noopener" class="w-11 h-11 rounded-full bg-pink-500 hover:bg-pink-400 text-white flex items-center justify-center text-lg transition shadow"><i class="fab fa-tiktok"></i></a>
+              <a href="https://photos.app.goo.gl/sVn3qhepB58fgwjj9" target="_blank" rel="noopener" title="Google Photos Vault" class="w-11 h-11 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 flex items-center justify-center text-lg transition shadow"><i class="fas fa-images"></i></a>
+              <a href="#contact-section" class="w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center text-lg transition shadow"><i class="fab fa-facebook-f"></i></a>
+              <a href="#contact-section" class="w-11 h-11 rounded-full bg-purple-600 hover:bg-purple-500 text-white flex items-center justify-center text-lg transition shadow"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGN-UP -->
+  <section class="py-12 bg-slate-900 text-white border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold mb-2">Join Our Toy Adventure!</h2>
+      <p class="text-slate-400 text-sm mb-6">Subscribe for new TikTok toy drops, NY street fair schedules, and an instant 15% off welcome code.</p>
+      <form class="lta-async-form max-w-md mx-auto flex flex-col sm:flex-row gap-2" data-success-msg="Welcome to the club! Use code TIKTOK15 for 15% off your first order!">
+        <input type="email" required placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400" />
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold px-6 py-3 rounded-xl text-sm transition">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <img src="assets/brand/logo.png" alt="Lights Toys Action" class="h-14 w-auto mb-3" />
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Where imagination comes to play! New York's premier destination for light-up toys, Pokémon plushies, Sanrio backpacks, and viral TikTok toys.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Shop Categories</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="shop.html" class="hover:text-cyan-400">All Toys Catalog</a></li>
+            <li><a href="#shop-catalog-section" onclick="window.LTA.filterCategory('light-up')" class="hover:text-cyan-400">Light-Up &amp; LED Toys</a></li>
+            <li><a href="#shop-catalog-section" onclick="window.LTA.filterCategory('pokemon')" class="hover:text-cyan-400">Pokémon Plush Collection</a></li>
+            <li><a href="#shop-catalog-section" onclick="window.LTA.filterCategory('backpacks')" class="hover:text-cyan-400">Sanrio &amp; Plush Backpacks</a></li>
+            <li><a href="#shop-catalog-section" onclick="window.LTA.filterCategory('puppets')" class="hover:text-cyan-400">Jeffy &amp; Hand Puppets</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Explore &amp; Support</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="videos.html" class="hover:text-pink-400">TikTok &amp; Video Showroom</a></li>
+            <li><a href="events.html" class="hover:text-cyan-400">NY Street Fairs &amp; Fireworks Schedule</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400">About Us &amp; Happy Toys NY Partner</a></li>
+            <li><a href="#faq-section" class="hover:text-cyan-400">Shipping &amp; 30-Day Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Contact Us</h4>
+          <ul class="space-y-2 text-xs">
+            <li><i class="fas fa-location-dot text-cyan-400 mr-2"></i>Franklin Square &amp; Maspeth, NY</li>
+            <li><i class="fas fa-phone text-pink-400 mr-2"></i>(516) 426-6794</li>
+            <li><i class="fas fa-envelope text-purple-400 mr-2"></i>lightstoysactionny@gmail.com</li>
+            <li><i class="fab fa-tiktok text-cyan-400 mr-2"></i>@lightstoysaction</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>&copy; 2026 Lights Toys Action / Tasty Treats NYC Inc. All rights reserved.</p>
+        <p class="mt-2 sm:mt-0">Designed for Web, Shopify &amp; TikTok Shop</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER SHOPPING CART DRAWER ================= -->
+  <div id="cart-backdrop" onclick="window.LTA.closeCart()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-50"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    <!-- Drawer Header -->
+    <div class="p-4 bg-slate-950 text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-shopping-cart text-cyan-400"></i>
+        <h3 class="font-display font-bold text-lg">Your Toy Cart</h3>
+        <span class="cart-count-badge bg-pink-500 text-white text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+      </div>
+      <button onclick="window.LTA.closeCart()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200">
+      <p id="free-ship-msg" class="text-xs text-slate-700 mb-1.5">Add $50.00 more for FREE Shipping!</p>
+      <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+        <div id="free-ship-progress" class="h-full bg-lta-gradient transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scrollable Area -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+
+    <!-- Cart Footer -->
+    <div class="p-4 bg-slate-50 border-t border-slate-200 space-y-3">
+      <!-- Promo Code Input -->
+      <div class="flex gap-2">
+        <input id="cart-promo-input" type="text" placeholder="Promo code (e.g. TIKTOK15 or NYPICKUP)" class="flex-1 px-3 py-2 rounded-lg border border-slate-300 text-xs focus:outline-none uppercase" />
+        <button onclick="window.LTA.applyPromo(document.getElementById('cart-promo-input').value)" class="bg-slate-900 hover:bg-cyan-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+          Apply
+        </button>
+      </div>
+
+      <div class="space-y-1 text-xs text-slate-600">
+        <div class="flex justify-between">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="font-bold text-slate-800">$0.00</span>
+        </div>
+        <div id="cart-discount-row" class="hidden flex justify-between text-emerald-600 font-bold">
+          <span>Promo Discount</span>
+          <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Estimated Shipping</span>
+          <span id="cart-shipping" class="font-bold text-slate-800">$5.99</span>
+        </div>
+        <div class="flex justify-between text-base font-extrabold text-slate-900 pt-1 border-t border-slate-200">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+
+      <button onclick="window.LTA.openCheckout()" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition flex items-center justify-center gap-2">
+        <i class="fas fa-lock"></i> Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= QUICK VIEW PRODUCT MODAL ================= -->
+  <div id="quick-view-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative my-8">
+      <button onclick="window.LTA.closeQuickView()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-slate-900 text-white hover:bg-pink-600 flex items-center justify-center transition">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="quick-view-content"></div>
+    </div>
+  </div>
+
+  <!-- ================= CHECKOUT MODAL ================= -->
+  <div id="checkout-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl relative my-8">
+      <button onclick="window.LTA.closeCheckout()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white flex items-center justify-center">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex items-center gap-2.5 mb-4">
+        <img src="assets/brand/logo.png" alt="Logo" class="h-10 w-auto" />
+        <div>
+          <h3 class="text-xl font-extrabold text-slate-900">Fast &amp; Secure Checkout</h3>
+          <p class="text-xs text-slate-500">Ship from our NY Warehouse or Pick Up at our next Long Island Event</p>
+        </div>
+      </div>
+
+      <div id="checkout-summary-box" class="bg-slate-50 p-4 rounded-2xl border border-slate-200 mb-5"></div>
+
+      <form id="checkout-form" class="space-y-3.5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+          <input type="email" required placeholder="Email for Order Tracking" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        </div>
+        <input type="text" required placeholder="Street Address (or type 'NY EVENT PICKUP')" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        <div class="grid grid-cols-3 gap-3">
+          <input type="text" required placeholder="City" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+          <input type="text" required placeholder="State" value="NY" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+          <input type="text" required placeholder="ZIP Code" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 mb-1.5">Payment Method</label>
+          <div class="grid grid-cols-3 gap-2 text-xs font-bold">
+            <label class="border border-cyan-500 bg-cyan-50/50 rounded-xl p-2.5 flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="pay" checked /> <i class="fas fa-credit-card text-cyan-600"></i> Card / Square
+            </label>
+            <label class="border border-slate-200 rounded-xl p-2.5 flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="pay" /> <i class="fab fa-apple-pay text-base"></i> Apple Pay
+            </label>
+            <label class="border border-slate-200 rounded-xl p-2.5 flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="pay" /> <i class="fab fa-tiktok text-pink-500"></i> TikTok Pay
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition mt-2">
+          Complete Order Now
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= HAPPY TOYS NY CUSTOM SOURCING MODAL ================= -->
+  <div id="custom-request-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative my-8">
+      <button onclick="window.LTA.closeCustomRequest()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white flex items-center justify-center">
+        <i class="fas fa-times"></i>
+      </button>
+      <span class="bg-cyan-100 text-cyan-800 text-xs font-extrabold px-3 py-1 rounded-full">HAPPY TOYS NYC DIRECT SOURCING</span>
+      <h3 class="text-2xl font-extrabold text-slate-900 mt-2 mb-1">Request Any Toy or Party Bundle</h3>
+      <p class="text-xs text-slate-600 mb-4">
+        Have a specific character, TikTok viral toy, or bulk event order in mind? We pull directly from Happy Toys in New York and will send you pricing &amp; availability fast!
+      </p>
+      <form id="custom-request-form" class="space-y-3">
+        <input id="custom-toy-input" type="text" required placeholder="What toy or character are you looking for?" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm" />
+        <div class="grid grid-cols-2 gap-3">
+          <input type="number" min="1" value="1" required placeholder="Quantity Needed" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm" />
+          <select class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm">
+            <option>Single / Personal Gift</option>
+            <option>Birthday Party Pack (10–30 items)</option>
+            <option>School / Event Wholesale (50+ items)</option>
+          </select>
+        </div>
+        <input type="text" required placeholder="Your Name &amp; Phone or Email" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm" />
+        <textarea rows="3" placeholder="Any extra details (size, budget, date needed)..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm"></textarea>
+        <button type="submit" class="w-full bg-lta-gradient text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition">
+          <i class="fas fa-paper-plane mr-2"></i> Send Request to Our NY Team
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
